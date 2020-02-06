@@ -12,7 +12,8 @@ RUN yarn --pure-lockfile && \
     echo *.ts.map >> .yarnclean && \
     echo *.spec.* >> .yarnclean && \
     yarn autoclean --force && \
-    yarn cache clean
+    yarn cache clean ; \
+    yarn theia download:plugins
 
 # See : https://github.com/theia-ide/theia-apps/issues/34
 RUN adduser --disabled-password --gecos '' theia && \
